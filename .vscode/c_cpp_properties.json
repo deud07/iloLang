@@ -12,6 +12,16 @@
             ],
             "compilerPath": "/usr/bin/clang",
             "cStandard": "c17"
+        },
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/include/"
+            ],
+            "defines": [],
+            "compilerPath": "C:\\msys64\\mingw64",
+            "cStandard": "c17"
         }
     ],
     "version": 4
