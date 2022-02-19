@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall -g -std=c++11
+CFLAGS = -Wall -g
 
 SRCDIR = src
 SRC = $(wildcard $(SRCDIR)/*.c)
@@ -9,7 +9,7 @@ BIN = bin
 EXEC = ilo.o
 
 macos:
-	$(CC) $(CFLAGS) -I$(INCLUDE) -c $(SRC) -o $(BIN)/macOS/$(EXEC)
+	$(CC) $(CFLAGS) -I$(INCLUDE) $(SRC) -o $(BIN)/macOS/$(EXEC)
 
 win32:
-	$(CC) $(CFLAGS) -I$(INCLUDE) -c $(SRC) -o $(BIN)/Win32/$(EXEC)
+	$(CC) $(CFLAGS) -I$(INCLUDE) $(SRC) -o $(BIN)/Win32/$(EXEC)
