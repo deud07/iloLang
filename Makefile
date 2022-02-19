@@ -8,5 +8,8 @@ BIN = bin
 
 EXEC = ilo.o
 
-all:
-	$(CC) $(CFLAGS) -I$(INCLUDE) -c $(SRC) -o $(BIN)/$(EXEC)
+macos:
+	$(CC) $(CFLAGS) -I$(INCLUDE) -c $(SRC) -o $(BIN)/macOS/$(EXEC)
+
+win32:
+	$(CC) $(CFLAGS) -I$(INCLUDE) -c $(SRC) -o $(BIN)/Win32/$(EXEC)
