@@ -1,21 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "../include/parse.h"
+#include "util.h"
 
 int main(int argc, const char **argv)
 {
-    if (argc < 2)
+    if (argc < 3)
     {
-        fprintf(stderr, "Usage: ./ilo <filename.ilo>\n");
-        fprintf(stderr, "Error: input file not specified\n");
+        PRINT_USAGE("ilo run <full_file_path>");
+        PRINT_ERROR("input file not specified");
         exit(1);
     }
-    
-    const char **test = parse_input_file(argv[1]);
-    if(test == NULL) return 1;
 
-    printf("%s\n", (char *)test);
+    if (argv[2] == "run")
+    {
+        PRINT_TEXT(argv[3]);
+    }
 
     return 0;
 }

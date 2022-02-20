@@ -1,20 +1,22 @@
-cc = gcc
-ccflags = -Wall -g
-
 src = ${wildcard src/*.c}
+inc = include
 obj = ${src:.c=.o}
-inc = ${wildcard include/**}
 
-exec = ilo
+cc = gcc
+ccflags = -Wall -g -I${inc}
+
+exe = build/ilo
 
 .PHONY: clean
 
-${exec}: ${obj}
-	${cc} -o $@ $<
+all: ${src} ${obj} ${exe}
 
-${obj}: ${src}
-	${cc} ${ccflags} -I${inc} $<
+${exe}: ${obj}
+	${cc} $^ -o $@
+
+%.o: %.c ${inc}
+	${cc} ${ccflags} $< -o $@
 
 clean:
-	rm ${exec}
+	rm ${exe}
 	rm ${obj}
