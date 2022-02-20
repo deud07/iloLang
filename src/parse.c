@@ -1,4 +1,4 @@
-#include "parse.h"
+#include "../include/parse.h"
 
 #include <stdio.h>
 

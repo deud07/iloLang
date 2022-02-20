@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "parse.h"
+#include "../include/parse.h"
 
 int main(int argc, const char **argv)
 {
@@ -12,10 +12,10 @@ int main(int argc, const char **argv)
         exit(1);
     }
     
-    const char *test = parse_input_file(argv[1]);
+    const char **test = parse_input_file(argv[1]);
     if(test == NULL) return 1;
 
-    printf("%s\n", test);
+    printf("%s\n", (char *)test);
 
     return 0;
 }
