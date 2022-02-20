@@ -1,6 +1,9 @@
 #ifndef ILO_PARSE_H
 #define ILO_PARSE_H
 
-const char *parse_input_file(const char *input_file_path); // Convert input files contents into array of strings for parsing
+/*
+* "Chop up" contents of input file and store the result int an array of char.
+*/
+const char **parse_input_file(const char *input_file_path);
 
 #endif // ILO_PARSE_H
